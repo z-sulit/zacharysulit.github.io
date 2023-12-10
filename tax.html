@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Income Tax</title>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Nunito:wght@300;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        nav {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+
+        nav a {
+            font-family: 'Michroma', sans-serif;
+            color: white;
+            text-decoration: none;
+            padding: 15px 15px;
+            display: inline-block;
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        nav img {
+            height: 80px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-image: url('https://wallpaperxyz.com/wp-content/uploads/Gif-Animated-Wallpaper-Background-Full-HD-Free-Download-for-PC-Macbook-261121-Wallpaperxyz.com-18.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+            margin: 5;
+            padding: 5;
+        }
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 40px;
+            //text-align: center;
+            margin-left:30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+        }
+        p {
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-align: justify;
+            text-justify: inter-word;
+            margin-left: 35px;
+        }
+        .lab{
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-align: justify;
+            text-justify: inter-word;
+            margin-left: 35px;
+        }
+        .ent{
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: black;
+            align-items: center;
+            text-align: center;
+        }
+        h2{
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            margin-left: 35px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+        
+        }
+    </style>
+
+    <body>
+    <nav>
+        <img src='zlogo.png' alt="Logo">
+        <a href="aboutmefilefinal.html">Home</a>
+        <a href="simple-computations.html">1 Conversions</a>
+        <a href="tax.html">2 Income Tax Calculator</a>
+        <a href="Nth_Factorial.html">3 Looping</a>
+        <a href="pay-roll.html">4 Simple payroll</a>
+    </nav>
+        <h1>Income tax calculator</h1>
+        <div class="border">
+        <p>Calculate your income tax</p>
+        <label class="lab" for="taxs">Input your taxable income: </label>
+        <input class="ent" type="text" id="taxs" placeholder="Enter the value">
+        <button onclick="calc()">Calculate</button>
+        <br><br>
+        <h2 id="result"></h1>
+        </div>
+        <script>
+            function calc() {
+                var rate;
+                var tax = parseFloat(document.getElementById("taxs").value);
+
+                console.log("1. Passed here.");
+
+                if (isNaN(tax)) {
+                    alert("Please enter a valid number for taxable income.");
+                    return;
+                }
+
+                if (tax <= 250000) {
+                    document.getElementById("result").innerHTML = "Your Income tax is: 0.00";
+                }
+                else if (tax <= 400000){
+                    result = 0 + 0.20 * (tax - 250000);
+                    document.getElementById("result").innerHTML = "Your Income Tax: " + result.toFixed(2);
+                }
+                else if (tax <= 800000){
+                    rate = 0.25 * (tax - 400000);
+                    result = 30000 + rate;
+                    document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+                }
+                else if (tax <= 2000000){
+                    rate = 0.30 * (tax - 800000);
+                    result = 130000 + rate;
+                    document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+                }
+                else if (tax <= 8000000){
+                    rate = 0.32 * (tax - 2000000);
+                    result = 490000 + rate
+                    document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+                }
+                else{
+                    rate = 0.35 * (tax - 8000000);
+                    result = 2410000 + rate
+                    document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+                }
+
+
+            }
+        </script>
+    </body>
+</html>
