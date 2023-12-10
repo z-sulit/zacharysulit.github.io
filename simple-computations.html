@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Nunito:wght@300;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<style>
+        nav {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+
+        nav a {
+            font-family: 'Michroma', sans-serif;
+            color: white;
+            text-decoration: none;
+            padding: 15px 15px;
+            display: inline-block;
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        nav img {
+            height: 80px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+    body{
+      background-image: url('https://wallpaperxyz.com/wp-content/uploads/Gif-Animated-Wallpaper-Background-Full-HD-Free-Download-for-PC-Macbook-261121-Wallpaperxyz.com-13.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #f0f0f0;
+      margin: 5;
+      padding: 5;
+
+    }
+    h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 40px;
+            //text-align: center;
+            margin-left:400px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+    }
+    .custom{
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 15px;
+            color: white;
+    }
+    .select-custom{
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: black;
+            align-items: center;
+            text-align: center;
+    }
+    .transparent-box {
+            //text-align: center;
+            margin-left: 400px; 
+    }
+    h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-family: 'Michroma', sans-serif;
+        font-size: 18px;
+        margin-left: auto;
+        color: white;
+        
+    }
+    .btn{
+        font-family: 'Michroma', sans-serif;
+        font-size: 15px;
+        margin-left: auto;
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <nav>
+        <img src='zlogo.png' alt="Logo">
+        <a href="aboutmefilefinal.html">Home</a>
+        <a href="simple-computations.html">1 Conversions</a>
+        <a href="tax.html">2 Income Tax Calculator</a>
+        <a href="Nth_Factorial.html">3 Looping</a>
+        <a href="pay-roll.html">4 Simple payroll</a>
+    </nav>
+
+ <h1>Simple Computations</h1>
+<br><br>
+<div class="transparent-box">
+    <label class="custom" for="typeconv">Please select Conversion Type:</label>
+    <br><br>
+    <select class="select-custom" id="typeconv">
+        <option value="FahtoC">Fahrenheit to Celsius</option>
+        <option value="CeltoFah">Celsius to Fahrenheit</option>
+        <option value="MetoFe">Meters to Feet</option>
+        <option value="FetoMe">Feet to Meters</option>
+    </select>
+    <br><br>
+    <label class="custom" for="inV">Enter Value:</label>
+    <br><br>
+    <input type="text" id="inV" placeholder="Enter the value">
+    <br><br>
+    <button class="btn" onclick="convert()">Convert</button>
+
+    <br><br>
+</div>
+<div class="transparent-box">
+    <h3 id="result"></h3>
+</div>
+</body>
+
+    <!-- CODE OF JS For all conversions using switch case-->
+    <script>
+       function convert() {
+            var typeconv = document.getElementById("typeconv").value;
+            var inV = parseFloat(document.getElementById("inV").value);
+            //checks if value inputed is a number
+            if (isNaN(inV)) {
+                alert("Please enter a valid number for conversion.");
+                return;
+            }
+
+            var result;
+
+            switch (typeconv) {
+                case "FahtoC":
+                    result = (inV - 32) * 5 / 9;
+                    document.getElementById("result").innerHTML = inV + "°F is " + result.toFixed(2) + " °C";
+                    break;
+                case "CeltoFah":
+                    result = (inV * 9 / 5) + 32;
+                    document.getElementById("result").innerHTML = inV+ "°C is " + result.toFixed(2) + " °F";
+                    break;
+                case "MetoFe":
+                    result = inV * 3.281;
+                    document.getElementById("result").innerHTML = inV+ " meters is " + result.toFixed(2) + " in feet";
+                    break;
+                case "FetoMe":
+                    result = inV / 3.281;
+                    document.getElementById("result").innerHTML = inV + " feet is " + result.toFixed(2) + " in meters";
+                    break;
+                default:
+                    alert("Invalid conversion type.");
+                    break;
+            }
+        }
+    </script>
+</html>
