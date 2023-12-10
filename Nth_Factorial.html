@@ -1,0 +1,166 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Looping</title>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Nunito:wght@300;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        nav {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+
+        nav a {
+            font-family: 'Michroma', sans-serif;
+            color: white;
+            text-decoration: none;
+            padding: 15px 15px;
+            display: inline-block;
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        nav img {
+            height: 80px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        body {
+            background-image: url('https://i.pinimg.com/originals/6a/cd/07/6acd0780a4c693b2cf8da52b5c44b18e.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+            background-attachment: fixed;
+            height: 100vh;
+            margin-bottom: 50px;
+        }
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 40px;
+            //text-align: center;
+            margin-left:30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+        }
+        h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 25px;
+            //text-align: center;
+            margin-left:30px;
+            color: white;
+        }
+        h4 {
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-align: justify;
+            text-justify: inter-word;
+            margin-left: 35px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+        }
+        .lab{
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            color: white;
+            text-align: justify;
+            text-justify: inter-word;
+            margin-left: 35px;
+        }
+        .ent{
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: black;
+            align-items: center;
+            text-align: center;
+
+    </style>
+    <body>
+    <nav>
+        <img src='zlogo.png' alt="Logo">
+        <a href="aboutmefilefinal.html">Home</a>
+        <a href="simple-computations.html">1 Conversions</a>
+        <a href="tax.html">2 Income Tax Calculator</a>
+        <a href="Nth_Factorial.html">3 Looping</a>
+        <a href="pay-roll.html">4 Simple payroll</a>
+    </nav>
+        <h1>Find the Nth Factorial</h1>
+        <label class="lab" for="nth">Input your favorite number: </label>
+        <input class="ent" type="text" id="nth" placeholder="Enter the value">
+        <button class="ent" onclick="calc()">Calculate</button>
+        <br>
+        <h2>Results</h2>
+        <h4 id="Fresult"></p>
+        <h4 id="Sresult"></p>
+        <h4 id="Aresult"></p>
+    <script>
+        function calc(){
+
+            var x = parseFloat(document.getElementById("nth").value);
+
+console.log("1. Passed here.");
+            if (isNaN(x)) {
+                    alert("Please enter a valid number for taxable income.");
+                    return;
+
+            } 
+        // 1st
+            var factorial = 1;
+            var i = 1;
+
+            while (i <= x){
+                factorial *= i; 
+                i++;
+            }
+            document.getElementById("Fresult").innerHTML = "The Factorial is: " + factorial.toFixed(2);
+        // 2nd
+            var sum = 0;
+            var o = 1;
+
+            do{
+            sum += o;
+            o++;
+             
+            }while ( o <= x);
+            document.getElementById("Sresult").innerHTML = "The Sum is: " + sum.toFixed(2);
+        // 3rd
+            var all = 0;
+            var avg;
+            for (p = 1; p <= x; p++){
+                all += p;
+            }
+            avg = all / x;
+            document.getElementById("Aresult").innerHTML = "The Average is: " + avg.toFixed(2);
+
+
+
+    }
+    </script>
+   </body>
+</html>
