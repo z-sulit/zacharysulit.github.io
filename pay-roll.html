@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+      
+<head>
+        <meta charset="utf-8">
+        <title>Looping</title>
+</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Nunito:wght@300;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+<style>
+       nav {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+
+        nav a {
+            font-family: 'Michroma', sans-serif;
+            color: white;
+            text-decoration: none;
+            padding: 15px 15px;
+            display: inline-block;
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        nav img {
+            height: 80px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+        body {
+            background-image: url('https://gifdb.com/images/high/aesthetic-anime-pixelated-background-bnuuk8wf00lrrcvf.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0;
+            background-attachment: fixed;
+            height: 100vh;
+            margin-bottom: 50px;
+        }
+        h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 30px;
+            //text-align: center;
+            margin-left:35px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+        }
+        h3 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            //text-align: center;
+            margin-left: 2px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            border-radius: 10px;
+            width: 50%;
+            padding: 20px;
+        }
+        h4 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            //text-align: center;
+            margin-left:30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            border-radius: 10px;
+            width: 30%;
+            padding: 20px;
+        }
+        label{
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Michroma', sans-serif;
+            font-size: 15px;
+            color: white;
+    
+        }
+        .edge {
+            justify-content: space-between;
+            align-items: right;
+            width: 100%;
+            margin: 5px;
+            margin-left: 20px;
+            padding: 30px;
+            border: 0px solid #ccc;
+        }
+        .buttons{
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            margin-left: 35px;
+            color: black;
+        }
+        #tablediv {
+            text-align: center;
+            margin: 30px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px); 
+            max-width: 1500px; 
+}
+        #payrollTable {
+            width: 100%; 
+            border-collapse: collapse;
+            margin-top: 20px;
+}
+
+        #payrollTable td {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-family: 'Roboto', sans-serif; 
+            font-size: 14px; 
+            font-weight: bold; 
+}
+
+        #payrollTable th {
+            background-color: #333;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+}
+
+        #payrollTable tbody tr:hover {
+            background-color: rgba(200, 200, 200, 0.5);
+            cursor: pointer; 
+}
+
+        #payrollTable tbody tr td button {
+            padding: 8px 12px;
+            font-size: 12px;
+            background-color: #4CAF50; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+}
+</style>
+
+
+<body>
+    <nav>
+        <img src='zlogo.png' alt="Logo">
+        <a href="aboutmefilefinal.html">Home</a>
+        <a href="simple-computations.html">1 Conversions</a>
+        <a href="tax.html">2 Income Tax Calculator</a>
+        <a href="Nth_Factorial.html">3 Looping</a>
+        <a href="pay-roll.html">4 Simple payroll</a>
+    </nav>
+    <div id="maindiv">
+        <div id="headerdiv">
+            <h2 id="pageheader">Payroll System</h2>
+        </div>
+        <div class="edge" id="inputdiv">
+            <h3>Enter Payroll Information</h3>
+            <label class="inputlabel" for="employeeName">Employee Name:</label>
+            <input id="employeeName" class="alignright" type="text"></input><br>
+            <label class="inputlabel" for="daysWorked">Days Worked:</label>
+            <input id="daysWorked" class="alignright" type="number"></input><br>
+            <label class="inputlabel" for="dailyWage">Daily Wage:</label>
+            <input id="dailyWage" class="alignright" type="number"></input><br>
+            <label class="inputlabel" for="deduction">Deduction Amount:</label>
+            <input id="deduction" type="number"></input><br>
+        </div>
+        <div class="buttons" id="buttonsdiv">
+            <button id="btnCalculate">Add Employee</button>
+            <br><br>
+            <button id="btnClearList">Clear List</button>
+        </div>
+        <div id="tablediv">
+            <h4>Payroll List</h3>
+            <table id="payrollTable" border="1">
+                <thead>
+                    <tr>
+                        <th>Employee No.</th>
+                        <th>Employee Name</th>
+                        <th>Days Worked</th>
+                        <th>Daily Wage</th>
+                        <th>Deduction Amount</th>
+                        <th>Net Salary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <dialog id="dlgConfirmCancel">
+        <form method="dialog">
+            <h4 id="dlgmsg"></h4>
+            <button id="btnConfirm" value="confirm">Confirm</button>
+            <button id="btnCancel" value="cancel">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog id="dlgAreYouSure">
+        <form method="dialog">
+            <h4 id="dlgmsg2"></h4>
+            <button id="btnYes" value="yes">Yes</button>
+            <button id="btnNo" value="no">No</button>
+        </form>
+    </dialog>
+
+    <input type="hidden" id="deleteEmployeeNo">
+
+    <script type="text/javascript">
+        function CalculateDecimal(v, x) {
+            var rvalue;
+
+            if (isNaN(v)) {
+                rvalue = '';
+            } else {
+                rvalue = v.toFixed(x);
+            }
+
+            return rvalue;
+        }
+
+        function CalculateNetSalary() {
+            var employeeName, daysWorked, dailyWage, deduction, netSalary;
+            employeeName = document.getElementById("employeeName").value;
+            daysWorked = document.getElementById("daysWorked").value * 1;
+            dailyWage = document.getElementById("dailyWage").value * 1;
+            deduction = document.getElementById("deduction").value * 1;
+
+            var employeeNo = document.getElementById("payrollTable").rows.length;
+
+            netSalary = CalculateDecimal((daysWorked * dailyWage) - deduction, 2);
+
+            // Add payroll information to the table
+            var payrollTable = document.getElementById("payrollTable").getElementsByTagName('tbody')[0];
+            var newRow = payrollTable.insertRow(payrollTable.rows.length);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+            var cell6 = newRow.insertCell(5);
+            var cell7 = newRow.insertCell(6);
+
+            cell1.innerHTML = employeeNo;
+            cell2.innerHTML = employeeName;
+            cell3.innerHTML = daysWorked;
+            cell4.innerHTML = dailyWage;
+            cell5.innerHTML = deduction;
+            cell6.innerHTML = netSalary;
+            cell7.innerHTML = `<button class="btnDeleteRow" onclick="deleteEmployee(${employeeNo})">Delete</button>`;
+
+            initPayrollInputs();
+        }
+
+        function initPayrollInputs() {
+            document.getElementById("employeeName").value = '';
+            document.getElementById("daysWorked").value = '';
+            document.getElementById("dailyWage").value = '';
+            document.getElementById("deduction").value = '';
+        }
+
+        function deleteEmployee(employeeNo) {
+            var payrollTable = document.getElementById("payrollTable").getElementsByTagName('tbody')[0];
+            var rows = payrollTable.getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                if (rows[i].cells[0].innerHTML == employeeNo) {
+                    payrollTable.deleteRow(i);
+                    break;
+                }
+            }
+        }
+
+        function clearPayrollList() {
+            document.getElementById("dlgConfirmCancel").showModal();
+        }
+
+        (() => {
+            const btnCalculate = document.getElementById("btnCalculate");
+            const btnClearList = document.getElementById("btnClearList");
+
+            const input_daysWorked = document.getElementById('daysWorked');
+            const input_dailyWage = document.getElementById("dailyWage");
+
+            input_daysWorked.addEventListener('change', e => {
+                e.currentTarget.value = parseFloat(e.currentTarget.value).toFixed(0);
+            });
+
+            input_dailyWage.addEventListener('change', e => {
+                e.currentTarget.value = parseFloat(e.currentTarget.value).toFixed(2);
+            });
+
+            btnCalculate.addEventListener("click", () => {
+                CalculateNetSalary();
+            });
+
+            btnClearList.addEventListener("click", () => {
+                document.getElementById("dlgConfirmCancel").showModal();
+            });
+
+            const btnCancel = document.getElementById("btnCancel");
+            const btnConfirm = document.getElementById("btnConfirm");
+            const dlgConfirmCancel = document.getElementById("dlgConfirmCancel");
+            dlgConfirmCancel.returnValue = "confirm";
+
+            const btnYes = document.getElementById("btnYes");
+            const btnNo = document.getElementById("btnNo");
+            const dlgAreYouSure = document.getElementById("dlgAreYouSure");
+            dlgAreYouSure.returnValue = "no";
+
+            btnCancel.addEventListener("click", () => {
+                dlgConfirmCancel.returnValue = "cancel";
+                dlgConfirmCancel.close("cancel");
+            });
+
+            btnConfirm.addEventListener("click", () => {
+                var rst = dlgConfirmCancel.returnValue;
+                if (rst == "confirm") {
+                    clearPayrollTable();
+                }
+            });
+
+            btnYes.addEventListener("click", () => {
+                var rst = dlgConfirmCancel.returnValue;
+                if (rst == "confirm") {
+                    clearPayrollTable();
+                }
+            });
+
+            btnNo.addEventListener("click", () => {
+                dlgAreYouSure.returnValue = "no";
+                dlgConfirmCancel.close("no");
+            });
+
+            dlgConfirmCancel.addEventListener("close", (e) => {
+                var rst = e.target.returnValue;
+                var lblmsg = document.getElementById("dlgmsg").innerHTML;
+                if (rst == "confirm") {
+                    if (lblmsg == "Clear list?") {
+                        dlgAreYouSure.showModal();
+                    }
+                }
+            });
+
+            dlgAreYouSure.addEventListener("close", (e) => {
+                var rst = e.target.returnValue;
+                var lblmsg = document.getElementById("dlgmsg").innerHTML;
+                if (rst == "yes" && lblmsg == "Clear list?") {
+                    initPayrollInputs();
+                    clearPayrollTable();
+                }
+            });
+
+            function clearPayrollTable() {
+                var payrollTable = document.getElementById("payrollTable").getElementsByTagName('tbody')[0];
+                payrollTable.innerHTML = '';
+            }
+
+        })();
+    </script>
+</body>
+
+</html>
